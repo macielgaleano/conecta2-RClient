@@ -15,9 +15,11 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import theme from "./theme";
+import HomeIcon from "@material-ui/icons/Home";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import SettingsIcon from "@material-ui/icons/Settings";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import Profile from "./Profile";
 
 const drawerWidth = 240;
 
@@ -93,18 +95,16 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <CssBaseline theme={theme} />
+      <CssBaseline />
       <AppBar
-        style={{ background: "#" }}
+        style={{ background: "#ff4b2b" }}
         position="fixed"
-        theme={theme}
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >
         <Toolbar>
           <IconButton
-            theme={theme}
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -133,15 +133,32 @@ export default function Navbar() {
           </IconButton>
         </div>
         <Divider />
+        <Profile></Profile>
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button key={"Inicio"}>
+            <ListItemIcon>
+              <HomeIcon style={{ color: "#ff4b2b" }}></HomeIcon>
+            </ListItemIcon>
+            <ListItemText primary={"Inicio"} />
+          </ListItem>
+          <ListItem button key={"Mi perfil"}>
+            <ListItemIcon style={{ color: "#ff4b2b" }}>
+              <AccountCircleIcon></AccountCircleIcon>
+            </ListItemIcon>
+            <ListItemText primary={"Mi perfil"} />
+          </ListItem>
+          <ListItem button key={"configuracion"}>
+            <ListItemIcon>
+              <SettingsIcon style={{ color: "#ff4b2b" }}></SettingsIcon>
+            </ListItemIcon>
+            <ListItemText primary={"Configuracion"} />
+          </ListItem>
+          <ListItem button key={"salir"}>
+            <ListItemIcon style={{ color: "#ff4b2b" }}>
+              <ExitToAppIcon></ExitToAppIcon>
+            </ListItemIcon>
+            <ListItemText primary={"Salir"} />
+          </ListItem>
         </List>
         <Divider />
         <List></List>
