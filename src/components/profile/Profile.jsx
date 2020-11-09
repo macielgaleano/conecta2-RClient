@@ -3,10 +3,12 @@ import { useParams } from "react-router-dom";
 /* import UseFetchProfile from "../../hooks/useFetchProfile"; */
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./profile.css";
+import Navbar from "../navbar/Navbar"
 import axios from "axios";
 
 
 const Profile = () => {
+ 
  const {username} = useParams()
 /*   const profileData = UseFetchProfile(username);
   console.log(profileData); */
@@ -17,29 +19,30 @@ const Profile = () => {
         
         .get(url)
         .then((res) => {
+          
             setUser(res.data);
+           
         })
         .catch((err) => {
           console.error(err);
 
         });
-  
+ 
   },[username]);
  
 
   return (
     <div>
-      {console.log(user)}
            <div className="profile-box">
         <div className="container">
           <div className="row d-flex justify-content-center ">
             <div className="col-3 col-md-2 col-sm-3">
-              <img className="img-fluid" src={user[1].avatar} alt="" />
+              <img className="img-fluid" src={user && user[1].avatar} alt="" />
             </div>
             <div className="col-md-7 col-sm-9 col-9">
-              <h1 className="username-head">{user[1].username}</h1>
+              <h1 className="username-head">{user && user[1].username}</h1>
               <div className="user-name">
-                {user[1].name} {user[1].lastname}
+                {user && user[1].name} {user && user[1].lastname}
                 {/*  if (req.user){
              if (req.user.username !== user.username){
                if (follow_question.length == 0)
@@ -51,7 +54,7 @@ const Profile = () => {
             } 
           } */}
               </div>
-              <p className="user-description">"{user[1].description} "</p>
+              <p className="user-description">"{user && user[1].description} "</p>
               {/*  <div className="account-info">
           <small className="followers"><i className="fas fa-users"></i> Seguidores: <spam className="followers-count"> <%-  user.list_users_followers.length
             </spam></small>
