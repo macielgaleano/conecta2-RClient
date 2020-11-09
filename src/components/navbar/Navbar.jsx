@@ -150,7 +150,7 @@ export default function Navbar() {
             </ListItem>
           </Link>
           <Link
-            to={"/users/" + useSelector((state) => state.user.user[0].author)}
+            to={"/users/"} //+ useSelector((state) => state.user.user[1].author)
             style={{ color: "black" }}
           >
             <ListItem button key={"Mi perfil"}>
@@ -168,7 +168,11 @@ export default function Navbar() {
               <ListItemText primary={"Configuracion"} />
             </ListItem>
           </Link>
-          <Link to="/" style={{ color: "black" }} onClick={() => setDeleteToken(true)}>
+          <Link
+            to="/registro"
+            style={{ color: "black" }}
+            onClick={() => setDeleteToken(true)}
+          >
             <ListItem button key={"salir"}>
               <ListItemIcon style={{ color: "#ff4b2b" }}>
                 <ExitToAppIcon></ExitToAppIcon>
