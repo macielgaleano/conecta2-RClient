@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import UseFetchProfile from "../../hooks/useFetchProfile";
-import { useHistory, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./profile.css";
+// import "./profile.css";
 
 const Profile = () => {
   const { username } = useParams();

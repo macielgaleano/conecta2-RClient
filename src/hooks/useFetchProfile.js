@@ -4,7 +4,7 @@ import axios from "axios";
 
 const useFetchProfile = (username) => {
   const [user, setUser] = useState("");
-  const url = "https://conecta2-server.vercel.app/" + "users/" + username;
+  const url = "https://conecta2-server.vercel.app/users/" + username;
   useEffect(() => {
     axios
       .get(url)
@@ -14,7 +14,7 @@ const useFetchProfile = (username) => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [user, url]);
   return user;
 };
 
