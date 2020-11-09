@@ -6,15 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./profile.css";
 
 const Profile = () => {
-
- const {username} = useParams()
+  const { username } = useParams();
   const profileData = UseFetchProfile(username);
   console.log(profileData);
-  console.log(username)
+  console.log(username);
 
   return (
     <div>
-           <div className="profile-box">
+      <div className="profile-box">
         <div className="container">
           <div className="row d-flex justify-content-center ">
             <div className="col-3 col-md-2 col-sm-3">
