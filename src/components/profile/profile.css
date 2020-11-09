@@ -1,0 +1,386 @@
+.body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.svg-border-rounded svg {
+  bottom: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+}
+
+.profile-box {
+  padding-top: 4rem;
+  background: #ff416c;
+  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+}
+
+.profile-box .container {
+  padding-bottom: 4rem;
+}
+
+.profile-box .username-head {
+  font-family: "Sansita Swashed", cursive;
+  color: white;
+  font-weight: 400;
+  font-size: 3rem;
+}
+
+.profile-box img,
+.image {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 50%;
+  border-color: white;
+}
+
+.profile-boximg img:hover {
+  opacity: 0;
+  border: red;
+}
+
+.profile-box .user-name {
+  color: whitesmoke;
+  font-size: 1.5rem;
+  padding-bottom: 30px;
+  font-weight: 200;
+}
+
+.username-head:hover {
+  animation: colorRotate 6s linear 0s infinite;
+}
+
+@keyframes colorRotate {
+  from {
+    color: rgb(255, 0, 0);
+  }
+  16.6% {
+    color: rgb(255, 0, 255);
+  }
+  33.3% {
+    color: rgb(0, 0, 255);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+  66.6% {
+    color: rgb(0, 255, 0);
+  }
+  83.3% {
+    color: rgb(255, 255, 0);
+  }
+  to {
+    color: rgb(255, 0, 0);
+  }
+}
+.profile-box .user-description {
+  color: rgb(226, 223, 223);
+  font-size: 1rem;
+  text-align: justify;
+  padding-bottom: 20px;
+  font-weight: 300;
+}
+
+.profile-box .account-info .followers {
+  font-size: 1rem;
+  margin-right: 20px;
+  color: white;
+}
+
+.profile-box .account-info .following {
+  font-size: 1rem;
+  margin-right: 60px;
+  color: white;
+}
+.profile-box .account-info .email {
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.profile-box .account-info .followings-count {
+  color: #f2f2f2;
+}
+
+.profile-box .account-info .followers-count {
+  color: #f2f2f2;
+}
+
+.tweets {
+  margin: 0 auto;
+}
+.last-tweets-text {
+  padding-bottom: 50px;
+  font-family: "Sansita Swashed", cursive;
+}
+
+.tweet-date {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+}
+
+.tweet-display-username {
+  font-weight: 800;
+  margin-right: 10px;
+}
+/* 
+Vertical nav */
+.sidebarCollapseMenu {
+  position: fixed;
+  bottom: -10px;
+  left: 5px;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.vertical-nav {
+  min-width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}
+
+.separator {
+  margin: 3rem 0;
+  border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+  letter-spacing: 0.1em;
+}
+
+.text-gray {
+  color: #aaa;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-content: flex-end;
+  margin: 0 20px;
+}
+
+.text-area {
+  width: 100%;
+  border: rgb(39, 36, 36) solid 1px;
+  border-radius: 5px;
+}
+
+.text-area:focus {
+  border: rgb(197, 48, 48) solid 2px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+input[type="email"] {
+  padding: 5px;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  /* border: 1px brown solid; */
+}
+
+form p {
+  text-align: justify;
+}
+
+/* .modify-text {
+} */
+
+.btn {
+  margin: 0;
+}
+
+.not-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+input[type="date"]:focus:not([readonly]),
+input[type="datetime-local"]:focus:not([readonly]),
+input[type="email"]:focus:not([readonly]),
+input[type="number"]:focus:not([readonly]),
+input[type="password"]:focus:not([readonly]),
+input[type="search-md"]:focus:not([readonly]),
+input[type="search"]:focus:not([readonly]),
+input[type="tel"]:focus:not([readonly]),
+input[type="text"]:focus:not([readonly]),
+input[type="time"]:focus:not([readonly]),
+input[type="url"]:focus:not([readonly]),
+.texto:focus,
+textarea:focus:not([readonly]),
+textarea.md-textarea:focus:not([readonly]) {
+  border: 1px solid rgb(165, 8, 8);
+  box-shadow: 0 1px 0 0 rgb(190, 4, 4);
+}
+.files input {
+  outline-offset: -10px;
+  -webkit-transition: outline-offset 0.15s ease-in-out,
+    background-color 0.15s linear;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+  padding: 120px 0px 85px 35%;
+  text-align: center !important;
+  margin: 0;
+  width: 100% !important;
+}
+.files input:focus {
+  outline-offset: -10px;
+  -webkit-transition: outline-offset 0.15s ease-in-out,
+    background-color 0.15s linear;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+  border: 1px solid #92b0b3;
+}
+.files {
+  position: relative;
+  width: 100%;
+}
+.files:after {
+  pointer-events: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 50px;
+  right: 0;
+  height: 56px;
+  content: "";
+  background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+  display: block;
+  margin: 0 auto;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.color input {
+  background-color: #f1f1f1;
+}
+.files:before {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  right: 0;
+  height: 57px;
+  content: "O arrastralo hacia aqui. ";
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.image-drag {
+  top: 50px;
+  left: 140px;
+  border-radius: 10px;
+}
+
+.form-config {
+  background-color: #f2f2f2;
+  -webkit-box-shadow: 7px 3px 38px -1px rgba(0, 0, 0, 0.82);
+  -moz-box-shadow: 7px 3px 38px -1px rgba(0, 0, 0, 0.82);
+  box-shadow: 7px 3px 38px -1px rgba(0, 0, 0, 0.82);
+}
+
+.color-top {
+  background: rgb(252, 81, 48);
+  background: linear-gradient(
+    90deg,
+    rgba(252, 81, 48, 1) 0%,
+    rgba(252, 111, 84, 1) 55%,
+    rgba(252, 136, 114, 1) 100%
+  );
+}
+
+.color-bottom {
+  background: rgb(252, 81, 48);
+  background: linear-gradient(
+    90deg,
+    rgba(252, 81, 48, 1) 0%,
+    rgba(252, 111, 84, 1) 55%,
+    rgba(252, 136, 114, 1) 100%
+  );
+}
+
+.row {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.body {
+  background: rgb(252, 81, 48);
+  background: linear-gradient(
+    90deg,
+    rgba(252, 81, 48, 1) 0%,
+    rgba(252, 111, 84, 1) 55%,
+    rgba(252, 136, 114, 1) 100%
+  );
+}
+
+.pb-10 {
+  padding-bottom: 9rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .vertical-nav {
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+    margin: 0 auto;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+    width: 60%;
+    margin: 0 auto;
+  }
+}

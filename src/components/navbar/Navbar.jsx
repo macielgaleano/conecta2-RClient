@@ -20,9 +20,13 @@ import HomeIcon from "@material-ui/icons/Home";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+<<<<<<< Updated upstream
 import Profile from "./Profile";
 import { Link } from "react-router-dom";
 import useFetchDeleteToken from "../../hooks/useFetchDeleteToken";
+=======
+import Profile from "./ProfileNav";
+>>>>>>> Stashed changes
 
 const drawerWidth = 240;
 
