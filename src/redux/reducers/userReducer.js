@@ -4,7 +4,7 @@ function userReducer(state = {}, action) {
       return {
         ...state,
         token: action.payload.token,
-        user: action.payload.user[0],
+        user: action.payload.user,
       };
     default:
       return state;

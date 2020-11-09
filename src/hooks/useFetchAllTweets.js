@@ -2,7 +2,7 @@ import React from "react";
 
 export default function useFetchAllTweets() {
   const user = useSelector((state) => state.user);
-  const [userProfile, setUserProfile] = useState(null);
+  const [tweets, setTweets] = useState(null);
   const url = "https://conecta2-server.vercel.app/" + "users/" + username;
   const params = { Authorization: user.token };
 

@@ -1,11 +1,10 @@
 import React from "react";
-import UseFetchUserData from "../../hooks/useFetchUserData";
 import { useSelector } from "react-redux";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 
 export default function Profile() {
-  const profileData = UseFetchUserData(useSelector((state) => state.user.user[0].author));
+  const profileData = useSelector((state) => state.user.user[1]);
 
   return (
     <div className="">

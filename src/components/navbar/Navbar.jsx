@@ -150,7 +150,7 @@ export default function Navbar() {
             </ListItem>
           </Link>
           <Link
-            to={"/users/" + useSelector((state) => state.user.user[0].username)}
+            to={"/users/" + useSelector((state) => state.user.user[1].username)}
             style={{ color: "black" }}
           >
             <ListItem button key={"Mi perfil"}>
