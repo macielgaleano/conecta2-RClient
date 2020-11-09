@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 /* import UseFetchProfile from "../../hooks/useFetchProfile"; */
-import { useSelector } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./profile.css";
 import axios from "axios";
+
+
 const Profile = () => {
  const {username} = useParams()
 /*   const profileData = UseFetchProfile(username);

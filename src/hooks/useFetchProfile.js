@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import {useParams} from "react-router-dom"
 
 import axios from "axios";
 
 const useFetchProfile = (username) => {
-  
   const [user, setUser] = useState("");
   const url = "https://conecta2-server.vercel.app/" + "users/" + username;
     useEffect(() => {
@@ -20,7 +18,7 @@ const useFetchProfile = (username) => {
         });
   
   },[username]);
-  return user;
+ 
 };
 
 export default useFetchProfile;
