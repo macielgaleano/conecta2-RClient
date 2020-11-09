@@ -1,29 +1,44 @@
-import React, { useState } from "react";
-import UseFetchProfile from "../../hooks/useFetchProfile";
+import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
+/* import UseFetchProfile from "../../hooks/useFetchProfile"; */
 import { useSelector } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./profile.css";
-
+import axios from "axios";
 const Profile = () => {
-
  const {username} = useParams()
-  const profileData = UseFetchProfile(username);
-  console.log(profileData);
-  console.log(username)
+/*   const profileData = UseFetchProfile(username);
+  console.log(profileData); */
+  const [user, setUser] = useState("");
+  const url = "https://conecta2-server.vercel.app/" + "users/" + username;
+    useEffect(() => {
+      axios
+        
+        .get(url)
+        .then((res) => {
+            setUser(res.data);
+        })
+        .catch((err) => {
+          console.error(err);
+
+        });
+  
+  },[username]);
+ 
 
   return (
     <div>
+      {console.log(user)}
            <div className="profile-box">
         <div className="container">
           <div className="row d-flex justify-content-center ">
             <div className="col-3 col-md-2 col-sm-3">
-              <img className="img-fluid" src={profileData[1].avatar} alt="" />
+              <img className="img-fluid" src={user[1].avatar} alt="" />
             </div>
             <div className="col-md-7 col-sm-9 col-9">
-              <h1 className="username-head">{profileData[1].username}</h1>
+              <h1 className="username-head">{user[1].username}</h1>
               <div className="user-name">
-                {profileData[1].name}+ ' ' + {profileData[1].lastname}
+                {user[1].name} {user[1].lastname}
                 {/*  if (req.user){
              if (req.user.username !== user.username){
                if (follow_question.length == 0)
@@ -35,7 +50,7 @@ const Profile = () => {
             } 
           } */}
               </div>
-              <p className="user-description">"{profileData.description} "</p>
+              <p className="user-description">"{user[1].description} "</p>
               {/*  <div className="account-info">
           <small className="followers"><i className="fas fa-users"></i> Seguidores: <spam className="followers-count"> <%-  user.list_users_followers.length
             </spam></small>

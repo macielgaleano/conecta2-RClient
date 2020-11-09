@@ -6,6 +6,8 @@ function userReducer(state = {}, action) {
         token: action.payload.token,
         user: action.payload.user,
       };
+      case "PROFILE":
+        return(action.payload)
     default:
       return state;
   }

@@ -9,15 +9,17 @@ const useFetchProfile = (username) => {
   const url = "https://conecta2-server.vercel.app/" + "users/" + username;
     useEffect(() => {
       axios
+        
         .get(url)
         .then((res) => {
             setUser(res.data);
         })
         .catch((err) => {
           console.error(err);
+
         });
   
-  },[]);
+  },[username]);
   return user;
 };
 
