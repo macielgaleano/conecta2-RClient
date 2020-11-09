@@ -4,18 +4,19 @@ import axios from "axios";
 
 const useFetchDeleteToken = (deleteToken) => {
   const user = useSelector((state) => state.user);
-  const url = "https://conecta2-server.vercel.app/delete";
+  const url = "https://conecta2-server.vercel.app/users/users";
   const params = { Authorization: user.token };
 
-  console.log(deleteToken);
   useEffect(() => {
     if (deleteToken) {
       axios
-        .get(url, params)
+        .delete(url, params)
         .then((res) => {
           console.log(res);
         })
-        .catch((err) => {});
+        .catch((err) => {
+          console.log(err);
+        });
     }
   });
 };
