@@ -14,6 +14,7 @@ const UseFetchUserData = (username) => {
         .get(url, params)
         .then((res) => {
           setUserProfile(res.data[1]);
+          console.log(res);
         })
         .catch((err) => {
           console.error(err);

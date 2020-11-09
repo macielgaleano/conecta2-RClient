@@ -5,7 +5,7 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 
 export default function Profile() {
-  const profileData = UseFetchUserData(useSelector((state) => state.user.user[0].author));
+  const profileData = UseFetchUserData(useSelector((state) => state.user.user[1].author));
 
   return (
     <div className="">
