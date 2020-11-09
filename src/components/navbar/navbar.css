@@ -1,3 +1,28 @@
 .color {
   background: red;
 }
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin: 20px auto;
+}
+
+.profileAvatar img {
+  width: 70%;
+  border-radius: 50%;
+}
+
+.profileName {
+  padding-top: 15px;
+  font-size: 25px;
+}
+
+.profileUsername {
+  color: rgb(224, 21, 21);
+  padding-top: 15px;
+  text-transform: uppercase;
+}

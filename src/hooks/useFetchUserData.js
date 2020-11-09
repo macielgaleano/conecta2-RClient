@@ -9,14 +9,16 @@ const UseFetchUserData = (username) => {
   const params = { Authorization: user.token };
 
   useEffect(() => {
-    axios
-      .get(url, params)
-      .then((res) => {
-        setUserProfile(res);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    if (!userProfile) {
+      axios
+        .get(url, params)
+        .then((res) => {
+          setUserProfile(res.data[1]);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   });
   return userProfile;
 };
