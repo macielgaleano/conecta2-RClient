@@ -13,6 +13,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
+import { useSelector } from "react-redux";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import HomeIcon from "@material-ui/icons/Home";
@@ -20,6 +21,8 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Profile from "./Profile";
+import { Link } from "react-router-dom";
+import useFetchDeleteToken from "../../hooks/useFetchDeleteToken";
 
 const drawerWidth = 240;
 
@@ -84,10 +87,13 @@ export default function Navbar() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [deleteToken, setDeleteToken] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
   };
+
+  useFetchDeleteToken(deleteToken);
 
   const handleDrawerClose = () => {
     setOpen(false);
@@ -135,30 +141,41 @@ export default function Navbar() {
         <Divider />
         <Profile></Profile>
         <List>
-          <ListItem button key={"Inicio"}>
-            <ListItemIcon>
-              <HomeIcon style={{ color: "#ff4b2b" }}></HomeIcon>
-            </ListItemIcon>
-            <ListItemText primary={"Inicio"} />
-          </ListItem>
-          <ListItem button key={"Mi perfil"}>
-            <ListItemIcon style={{ color: "#ff4b2b" }}>
-              <AccountCircleIcon></AccountCircleIcon>
-            </ListItemIcon>
-            <ListItemText primary={"Mi perfil"} />
-          </ListItem>
-          <ListItem button key={"configuracion"}>
-            <ListItemIcon>
-              <SettingsIcon style={{ color: "#ff4b2b" }}></SettingsIcon>
-            </ListItemIcon>
-            <ListItemText primary={"Configuracion"} />
-          </ListItem>
-          <ListItem button key={"salir"}>
-            <ListItemIcon style={{ color: "#ff4b2b" }}>
-              <ExitToAppIcon></ExitToAppIcon>
-            </ListItemIcon>
-            <ListItemText primary={"Salir"} />
-          </ListItem>
+          <Link to="/" style={{ color: "black" }}>
+            <ListItem button key={"Inicio"}>
+              <ListItemIcon>
+                <HomeIcon style={{ color: "#ff4b2b" }}></HomeIcon>
+              </ListItemIcon>
+              <ListItemText primary={"Inicio"} />
+            </ListItem>
+          </Link>
+          <Link
+            to={"/users/" + useSelector((state) => state.user.user[0].author)}
+            style={{ color: "black" }}
+          >
+            <ListItem button key={"Mi perfil"}>
+              <ListItemIcon style={{ color: "#ff4b2b" }}>
+                <AccountCircleIcon></AccountCircleIcon>
+              </ListItemIcon>
+              <ListItemText primary={"Mi perfil"} />
+            </ListItem>
+          </Link>
+          <Link to="/configuration" style={{ color: "black" }}>
+            <ListItem button key={"configuracion"}>
+              <ListItemIcon>
+                <SettingsIcon style={{ color: "#ff4b2b" }}></SettingsIcon>
+              </ListItemIcon>
+              <ListItemText primary={"Configuracion"} />
+            </ListItem>
+          </Link>
+          <Link to="/" style={{ color: "black" }} onClick={() => setDeleteToken(true)}>
+            <ListItem button key={"salir"}>
+              <ListItemIcon style={{ color: "#ff4b2b" }}>
+                <ExitToAppIcon></ExitToAppIcon>
+              </ListItemIcon>
+              <ListItemText primary={"Salir"} />
+            </ListItem>
+          </Link>
         </List>
         <Divider />
         <List></List>
