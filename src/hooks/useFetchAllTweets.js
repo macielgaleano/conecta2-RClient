@@ -6,7 +6,8 @@ export default function useFetchAllTweets() {
   const user = useSelector((state) => state.user);
   const [tweets, setTweets] = useState(null);
   const url = "https://conecta2-server.vercel.app/users";
-  const params = { Authorization: user.token };
+  console.log(user.token);
+  const params = { Authorization: `Bearer ${user.token}` };
 
   useEffect(() => {
     axios
@@ -16,7 +17,7 @@ export default function useFetchAllTweets() {
         console.log(res);
       })
       .catch((err) => {
-        console.error(err);
+        console.log(err);
       });
   });
   return tweets;

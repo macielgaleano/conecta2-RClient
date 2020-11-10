@@ -1,21 +1,20 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function useFetchAllTweetsUser() {
   const user = useSelector((state) => state.user);
-  const [tweets, setUserProfile] = useState(null);
+  const [tweets, setTweets] = useState(null);
   const url = "https://conecta2-server.vercel.app/" + "users/" + username;
-  const params = {
-    Authorization:
-      " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTMwMTNjNzU3YmRiMmE1ZWUyODEwMyIsImlhdCI6MTYwNDkzMjQyOCwiZXhwIjoxNjA1MTQ4NDI4fQ.FKT2dTJcgm0osRYHSVVO_jt8rQpW2U5eQHSZUR9tKL8",
-  };
+  const params = { Authorization: user.token };
 
   useEffect(() => {
-    if (!userProfile) {
+    if (!tweets) {
       axios
         .get(url, params)
         .then((res) => {
-          setUserProfile(res.data[1]);
+          setTweets(res.data[1]);
         })
         .catch((err) => {
           console.error(err);
