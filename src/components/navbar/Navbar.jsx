@@ -22,8 +22,6 @@ import useFetchDeleteToken from "../../hooks/useFetchDeleteToken";
 import NavbarItem from "./NavbarItem";
 import { makeStylesConfig } from "../../utils/makeStyles";
 
-const drawerWidth = 240;
-
 const useStyles = makeStylesConfig;
 
 export default function Navbar() {
