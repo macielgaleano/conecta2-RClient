@@ -12,17 +12,14 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItem from "@material-ui/core/ListItem";
 import { useSelector } from "react-redux";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import HomeIcon from "@material-ui/icons/Home";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Profile from "./ProfileNav";
-import { Link } from "react-router-dom";
 import useFetchDeleteToken from "../../hooks/useFetchDeleteToken";
+import NavbarItem from "./NavbarItem";
 
 const drawerWidth = 240;
 
@@ -141,45 +138,23 @@ export default function Navbar() {
         <Divider />
         <Profile></Profile>
         <List>
-          <Link to="/" style={{ color: "black" }}>
-            <ListItem button key={"Inicio"}>
-              <ListItemIcon>
-                <HomeIcon style={{ color: "#ff4b2b" }}></HomeIcon>
-              </ListItemIcon>
-              <ListItemText primary={"Inicio"} />
-            </ListItem>
-          </Link>
-          <Link
-            to={"/users/" + useSelector((state) => state.user.user[1].username)}
-            style={{ color: "black" }}
-          >
-            <ListItem button key={"Mi perfil"}>
-              <ListItemIcon style={{ color: "#ff4b2b" }}>
-                <AccountCircleIcon></AccountCircleIcon>
-              </ListItemIcon>
-              <ListItemText primary={"Mi perfil"} />
-            </ListItem>
-          </Link>
-          <Link to="/configuration" style={{ color: "black" }}>
-            <ListItem button key={"configuracion"}>
-              <ListItemIcon>
-                <SettingsIcon style={{ color: "#ff4b2b" }}></SettingsIcon>
-              </ListItemIcon>
-              <ListItemText primary={"Configuracion"} />
-            </ListItem>
-          </Link>
-          <Link
-            to="/registro"
-            style={{ color: "black" }}
+          <NavbarItem component={HomeIcon} route={"/"} text={"Inicio"}></NavbarItem>
+          <NavbarItem
+            component={AccountCircleIcon}
+            route={"/users/" + useSelector((state) => state.user.user[1].username)}
+            text={"Mi perfil"}
+          ></NavbarItem>
+          <NavbarItem
+            component={SettingsIcon}
+            route={"/configuration"}
+            text={"Configuracion"}
+          ></NavbarItem>
+          <NavbarItem
+            component={ExitToAppIcon}
+            route={"/registro"}
+            text={"Salir"}
             onClick={() => setDeleteToken(true)}
-          >
-            <ListItem button key={"salir"}>
-              <ListItemIcon style={{ color: "#ff4b2b" }}>
-                <ExitToAppIcon></ExitToAppIcon>
-              </ListItemIcon>
-              <ListItemText primary={"Salir"} />
-            </ListItem>
-          </Link>
+          ></NavbarItem>
         </List>
         <Divider />
         <List></List>
