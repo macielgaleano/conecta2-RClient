@@ -2,6 +2,14 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.App {
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+}
+
 .svg-border-rounded svg {
   bottom: 0;
   left: 0;
@@ -10,7 +18,8 @@
 }
 
 .profile-box {
-  padding-top: 4rem;
+  padding-top: 8rem;
+  width: 100%;
   background: #ff416c;
   background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
   background: linear-gradient(to right, #ff4b2b, #ff416c);

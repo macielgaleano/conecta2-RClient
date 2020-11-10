@@ -103,7 +103,7 @@ export default function Navbar() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
-        style={{ background: "#ff4b2b" }}
+        style={{ background: "#000" }}
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
