@@ -8,6 +8,7 @@ export default function Home() {
     <div>
       <Navbar></Navbar>
       <ListTweets></ListTweets>
+      <CreateTWeet></CreateTWeet>
     </div>
   );
 }
