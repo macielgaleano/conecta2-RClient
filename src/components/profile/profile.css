@@ -127,7 +127,6 @@
 .tweet-date {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: end;
 }
 
 .tweet-display-username {
@@ -206,7 +205,6 @@ Vertical nav */
 .buttons {
   display: flex;
   flex-direction: column;
-  justify-content: end;
   align-content: flex-end;
   margin: 0 20px;
 }

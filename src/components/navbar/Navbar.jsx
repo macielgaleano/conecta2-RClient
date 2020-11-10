@@ -17,7 +17,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import Profile from "./ProfileNav";
+import Profile from "./NavbarProfile";
 import useFetchDeleteToken from "../../hooks/useFetchDeleteToken";
 import NavbarItem from "./NavbarItem";
 import { makeStylesConfig } from "../../utils/makeStyles";

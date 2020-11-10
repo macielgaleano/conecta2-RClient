@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import PrivateRoute from "./components/Routes/privateRoute";
 import PublicRoute from "./components/Routes/publicRoute";
 import Home from "./components/home/Home";
-import Profile from "./components/profile/Profile";
+import ProfilePage from "./components/profile/ProfilePage";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
           <PublicRoute
             restricted={false}
             path="/users/:username"
-            component={Profile}
+            component={ProfilePage}
           ></PublicRoute>
         </Switch>
       </div>

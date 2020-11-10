@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./profile.css";
 import { useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "../navbar/Navbar";
+
 import useFetchProfile from "../../hooks/useFetchProfile";
 
 const Profile = () => {
@@ -11,7 +11,6 @@ const Profile = () => {
 
   return (
     <div className="profile-box">
-      <Navbar></Navbar>
       <div className="container">
         <div className="row d-flex justify-content-center ">
           <div className="col-3 col-md-4 col-sm-4">
