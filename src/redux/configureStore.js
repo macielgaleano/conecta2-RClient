@@ -4,9 +4,11 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import user from "./reducers/userReducer";
+import tweet from "./reducers/tweetReducer";
 
 const rootReducer = combineReducers({
   user,
+  tweet,
 });
 
 const persistConfig = {
