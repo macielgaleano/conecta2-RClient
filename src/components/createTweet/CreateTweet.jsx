@@ -8,13 +8,15 @@ const CreateTweet = () => {
   const token = useSelector((state) => state.user.token);
   // const tweets = useSelector((state) => state.tweets);
   const [content, setContent] = useState("");
-  const author = useSelector((state) => state.user.user[1]._id);
+  let user = useSelector((state) => state.user);
+  // const author = "";
+  // user.length > 0 && author = user.user[1]._id;
   function handleCreateTweet(e) {
     const url = "https://conecta2-server.vercel.app/tweets/";
 
     const tweet = {
       content: content,
-      author: author,
+      // author: author,
     };
 
     axios

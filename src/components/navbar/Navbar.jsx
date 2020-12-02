@@ -40,6 +40,8 @@ export default function Navbar() {
     setOpen(false);
   };
 
+  let user = useSelector((state) => state.user);
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -81,11 +83,12 @@ export default function Navbar() {
         </div>
         <Divider />
         <Profile></Profile>
+
         <List>
           <NavbarItem component={HomeIcon} route={"/"} text={"Inicio"}></NavbarItem>
           <NavbarItem
             component={AccountCircleIcon}
-            route={"/users/" + useSelector((state) => state.user.user[1].username)}
+            route={user.lenth > 0 && "/users/" + user.user[1].username}
             text={"Mi perfil"}
           ></NavbarItem>
           <NavbarItem
